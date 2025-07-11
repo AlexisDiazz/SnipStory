@@ -8,7 +8,6 @@ import LogoCarousel from "@/components/LogoCarousel";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import Spline from "@splinetool/react-spline";
 
 const Index = () => {
   return (
@@ -22,11 +21,6 @@ const Index = () => {
         transition={{ duration: 0.5 }}
         className="relative min-h-screen px-4 pt-40 pb-20 overflow-hidden"
       >
-        {/* Stable Spline Background */}
-        <div className="absolute inset-0 w-full h-full -z-10">
-          <Spline scene="https://prod.spline.design/tqQ4mZR6dMQhBo8s/scene.splinecode" />
-        </div>
-
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
