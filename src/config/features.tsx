@@ -5,7 +5,7 @@ export const features = [
     title: "Professional Video Editing",
     description: "Expert video editing with professional transitions, effects, and optimized formats for each platform.",
     icon: <Video className="w-6 h-6" />,
-    image: "/lovable-uploads/86329743-ee49-4f2e-96f7-50508436273d.png"
+    image: "/lovable-uploads/snipstory-dashboard-metrics.png"
   },
   {
     title: "Content Strategy & Planning",
