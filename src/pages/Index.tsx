@@ -90,7 +90,7 @@ const Index = () => {
         delay: 0.6
       }} className="relative mx-auto max-w-5xl mt-20">
           <div className="glass rounded-xl overflow-hidden">
-            <img alt="SnipStory Dashboard" className="w-full h-auto" src="/lovable-uploads/575a9b71-4538-49c6-a34e-057d73b37b4c.png" />
+            <img alt="SnipStory Dashboard" className="w-full h-auto" src="/lovable-uploads/99d6a2ed-c6c1-4ec0-860d-3da71ed55179.png" />
           </div>
         </motion.div>
       </motion.section>
