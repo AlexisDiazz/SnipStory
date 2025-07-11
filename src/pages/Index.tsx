@@ -80,21 +80,18 @@ const Index = () => {
           </motion.div>
         </div>
 
-        <motion.div initial={{
-        opacity: 0,
-        y: 20
-      }} animate={{
-        opacity: 1,
-        y: 0
-      }} transition={{
-        delay: 0.6
-      }} className="relative mx-auto max-w-5xl mt-20">
-          <div className="glass rounded-xl overflow-hidden">
-          <img
-  alt="SnipStory Dashboard - Mis"
-  className="w-full h-auto"
-  src="/lovable-uploads/Added Black White Bold 3D Social Media Report Presentation.png"
-/>
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.6 }}
+  className="relative mx-auto max-w-5xl mt-20"
+>
+  <div className="glass rounded-xl overflow-hidden">
+    <img
+      alt="SnipStory Dashboard - Mis"
+      className="w-full h-auto"
+      src="/lovable-uploads/Added Black White Bold 3D Social Media Report Presentation.png"
+    />
 
 
           </div>
