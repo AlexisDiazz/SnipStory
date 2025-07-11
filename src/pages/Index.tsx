@@ -20,10 +20,10 @@ const Index = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="relative container px-4 pt-40 pb-20 overflow-hidden"
+        className="relative min-h-screen px-4 pt-40 pb-20 overflow-hidden"
       >
-        {/* Spline Background */}
-        <div className="absolute inset-0 -z-10">
+        {/* Stable Spline Background */}
+        <div className="absolute inset-0 w-full h-full -z-10">
           <Spline scene="https://prod.spline.design/tqQ4mZR6dMQhBo8s/scene.splinecode" />
         </div>
 
