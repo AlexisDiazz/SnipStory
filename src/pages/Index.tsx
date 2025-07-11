@@ -8,6 +8,7 @@ import LogoCarousel from "@/components/LogoCarousel";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import Spline from "@splinetool/react-spline";
 
 const Index = () => {
   return (
@@ -21,16 +22,9 @@ const Index = () => {
         transition={{ duration: 0.5 }}
         className="relative container px-4 pt-40 pb-20 overflow-hidden"
       >
-        {/* Background EMBED - Spline */}
+        {/* Spline Background */}
         <div className="absolute inset-0 -z-10">
-          <iframe
-            src="https://my.spline.design/robotarm-5c3RzovlpXeLcB2ub48pxzmJ/"
-            frameBorder="0"
-            width="100%"
-            height="100%"
-            className="w-full h-full"
-            allowFullScreen
-          ></iframe>
+          <Spline scene="https://prod.spline.design/tqQ4mZR6dMQhBo8s/scene.splinecode" />
         </div>
 
         <motion.div
