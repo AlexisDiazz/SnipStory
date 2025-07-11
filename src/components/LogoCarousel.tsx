@@ -2,11 +2,13 @@ import { motion } from "framer-motion";
 
 const LogoCarousel = () => {
   const logos = [
-    "/src/assets/meta-logo.png",
-    "/src/assets/tiktok-logo.png",
-    "/src/assets/instagram-logo.png",
-    "/src/assets/youtube-logo.png",
-    "/src/assets/twitter-logo.png",
+    "/lovable-uploads/e24a83fc-ae12-456e-afbb-6022b03e17ad.png", // Facebook
+    "/lovable-uploads/425b1121-3a71-4917-afbc-c2e43af4598d.png", // Instagram
+    "/lovable-uploads/c8ca09c2-1578-462f-bd6a-ef80fa0c77ee.png", // Meta
+    "/lovable-uploads/bac5897d-8ccd-429c-8b1f-cf26e008f8c9.png", // Podcast
+    "/lovable-uploads/864a04e0-bff5-4fa0-8028-36ede5314613.png", // Spotify
+    "/lovable-uploads/f8e5ee7c-4046-4f4f-9ebd-2e33524a5895.png", // TikTok
+    "/lovable-uploads/e2ce3b34-e162-4ac9-bff2-f5da5f00a834.png", // YouTube
   ];
 
   const extendedLogos = [...logos, ...logos, ...logos];
