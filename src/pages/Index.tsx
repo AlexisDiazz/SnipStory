@@ -87,11 +87,12 @@ const Index = () => {
   className="relative mx-auto max-w-5xl mt-20"
 >
   <div className="glass rounded-xl overflow-hidden">
-    <img
-      alt="SnipStory Dashboard - Mis"
-      className="w-full h-auto"
-      src="/lovable-uploads/Added Black White Bold 3D Social Media Report Presentation.png"
-    />
+  <img
+    alt="SnipStory Dashboard"
+    className="w-full h-auto"
+    src="/lovable-uploads/snipstory-dashboard.png"
+  />
+
 
 
           </div>
