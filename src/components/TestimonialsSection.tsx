@@ -7,39 +7,39 @@ import { Card } from "./ui/card";
 const testimonials = [
   {
     name: "Michael Chen",
-    role: "Professional Trader",
+    role: "Content Creator",
     image: "https://avatars.githubusercontent.com/u/1234567?v=4",
-    content: "The real-time market data and advanced trading features have significantly improved my trading performance. The platform's security measures give me peace of mind."
+    content: "SnipStory's professional editing and content strategy have dramatically increased my engagement rates. My clips are now getting 10x more views!"
   },
   {
     name: "Sarah Johnson",
-    role: "Crypto Fund Manager",
+    role: "Marketing Manager",
     image: "https://avatars.githubusercontent.com/u/2345678?v=4",
-    content: "CryptoTrade's institutional-grade tools have transformed our trading strategy. The API integration and automated features have saved us countless hours."
+    content: "The team at SnipStory transformed our social media presence. Their strategic approach and quality editing have boosted our brand recognition significantly."
   },
   {
     name: "David Wilson",
-    role: "Early Crypto Investor",
+    role: "Small Business Owner",
     image: "https://avatars.githubusercontent.com/u/3456789?v=4",
-    content: "The customer support is exceptional, and the platform's intuitive design made getting started with crypto trading seamless. A game-changer for both beginners and pros."
+    content: "Working with SnipStory was a game-changer for my business. Their clips helped me reach a wider audience and convert more customers through social media."
   },
   {
     name: "Emily Zhang",
-    role: "DeFi Developer",
+    role: "Social Media Influencer",
     image: "https://avatars.githubusercontent.com/u/4567890?v=4",
-    content: "We've seen remarkable improvements in our trading efficiency since switching to CryptoTrade. The smart order routing and liquidity aggregation are particularly impressive."
+    content: "The quality and creativity of SnipStory's editing is unmatched. They understand exactly what works on each platform and deliver consistently viral content."
   },
   {
     name: "James Rodriguez",
-    role: "Crypto Security Expert",
+    role: "Digital Marketing Specialist",
     image: "https://avatars.githubusercontent.com/u/5678901?v=4",
-    content: "The security features are robust and the regular updates keep us ahead of emerging threats. It's exactly what the crypto industry needed."
+    content: "SnipStory's analytics and reporting features help us track performance and optimize our content strategy. The results speak for themselves - massive growth!"
   },
   {
     name: "Lisa Thompson",
-    role: "Portfolio Manager",
+    role: "Brand Manager",
     image: "https://avatars.githubusercontent.com/u/6789012?v=4",
-    content: "The platform's ability to handle complex trading strategies while maintaining simplicity in its interface is remarkable. It's been invaluable for our portfolio management."
+    content: "The professionalism and attention to brand consistency that SnipStory provides is exceptional. They've become an essential part of our marketing team."
   }
 ];
 
@@ -54,9 +54,9 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-normal mb-4">Trusted by Traders</h2>
+          <h2 className="text-5xl font-normal mb-4">Trusted by Creators</h2>
           <p className="text-muted-foreground text-lg">
-            Join thousands of satisfied traders on CryptoTrade
+            Join hundreds of satisfied creators and brands with SnipStory
           </p>
         </motion.div>
 
