@@ -110,7 +110,11 @@ const Index = () => {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join hundreds of creators who have boosted their engagement with our clipping services.
           </p>
-          <Button size="lg" className="button-gradient">
+          <Button
+            size="lg"
+            className="button-gradient"
+            onClick={() => (window.location.href = '/contact')}
+          >
             Start Your Project
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>

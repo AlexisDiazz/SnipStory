@@ -78,8 +78,8 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <Button 
-              onClick={() => scrollToSection('cta')}
+            <Button
+              onClick={() => (window.location.href = '/contact')}
               size="sm"
               className="button-gradient"
             >
@@ -113,10 +113,10 @@ const Navigation = () => {
                       {item.name}
                     </a>
                   ))}
-                  <Button 
+                  <Button
                     onClick={() => {
                       setIsMobileMenuOpen(false);
-                      scrollToSection('cta');
+                      window.location.href = '/contact';
                     }}
                     className="button-gradient mt-4"
                   >
