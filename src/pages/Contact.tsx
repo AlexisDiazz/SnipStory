@@ -40,11 +40,14 @@ const Contact = () => {
   async function onSubmit(values: FormValues) {
     if (values.botField) return; // honeypot
     try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
-      });
+      const res = await fetch(
+        'https://script.google.com/macros/s/AKfycby5zKHbPimSXw9DxJ2WkSLUA-C0Oe_w1nF2DipuVWZ1Nr03ROqyP8EcZ6lzf2MM7kYqeQ/exec',
+        {
+          method: 'POST',
+          body: JSON.stringify(values),
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
       if (!res.ok) throw new Error('Failed to submit');
       toast({ title: 'Thank you! We\'ll get back to you within 24 hours.' });
       form.reset();
