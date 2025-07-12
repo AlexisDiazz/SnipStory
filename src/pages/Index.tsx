@@ -120,6 +120,11 @@ const Index = () => {
             size="lg"
             className="button-gradient"
             onClick={() => navigate('/contact')}
+ wdwgm6-codex/implement-functional-website-features
+=======
+
+            onClick={() => (window.location.href = '/contact')}
+ main
           >
             Start Your Project
             <ArrowRight className="ml-2 w-4 h-4" />

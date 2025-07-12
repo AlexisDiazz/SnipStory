@@ -86,6 +86,10 @@ const Navigation = () => {
             ))}
             <Button
               onClick={() => navigate('/contact')}
+ wdwgm6-codex/implement-functional-website-features
+=======
+              onClick={() => (window.location.href = '/contact')}
+ main
               size="sm"
               className="button-gradient"
             >
@@ -123,6 +127,11 @@ const Navigation = () => {
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       navigate('/contact');
+ wdwgm6-codex/implement-functional-website-features
+=======
+                      window.location.href = '/contact';
+
+ main
                     }}
                     className="button-gradient mt-4"
                   >
