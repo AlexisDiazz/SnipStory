@@ -42,7 +42,11 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { name: "Contact Us", href: "#contact", onClick: () => scrollToSection('cta') },
+    {
+      name: "Contact Us",
+      href: "#contact",
+      onClick: () => navigate('/contact'),
+    },
     { name: "View Our Projects", href: "#projects", onClick: () => scrollToSection('testimonials') },
     { name: "Prices", href: "#pricing", onClick: () => scrollToSection('pricing') },
     { name: "Features", href: "#features", onClick: () => scrollToSection('features') },
@@ -82,7 +86,10 @@ const Navigation = () => {
             ))}
             <Button
               onClick={() => navigate('/contact')}
+ wdwgm6-codex/implement-functional-website-features
+=======
               onClick={() => (window.location.href = '/contact')}
+ main
               size="sm"
               className="button-gradient"
             >
@@ -120,8 +127,11 @@ const Navigation = () => {
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       navigate('/contact');
+ wdwgm6-codex/implement-functional-website-features
+=======
                       window.location.href = '/contact';
 
+ main
                     }}
                     className="button-gradient mt-4"
                   >

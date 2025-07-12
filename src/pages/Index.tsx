@@ -62,9 +62,13 @@ const Index = () => {
             transition={{ delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 items-start"
           >
-            <Button size="lg" className="button-gradient">
-              Get Started
-            </Button>
+          <Button
+            size="lg"
+            className="button-gradient"
+            onClick={() => navigate('/contact')}
+          >
+            Get Started
+          </Button>
             <Button size="lg" variant="link" className="text-white">
               View Our Work <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
@@ -116,8 +120,11 @@ const Index = () => {
             size="lg"
             className="button-gradient"
             onClick={() => navigate('/contact')}
+ wdwgm6-codex/implement-functional-website-features
+=======
 
             onClick={() => (window.location.href = '/contact')}
+ main
           >
             Start Your Project
             <ArrowRight className="ml-2 w-4 h-4" />
