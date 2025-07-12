@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Scissors } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
+import { useNavigate } from "react-router-dom";
 import { FeaturesSection } from "@/components/features/FeaturesSection";
 import { PricingSection } from "@/components/pricing/PricingSection";
 import LogoCarousel from "@/components/LogoCarousel";
@@ -10,6 +11,7 @@ import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 const Index = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-black text-foreground">
       <Navigation />
@@ -110,7 +112,11 @@ const Index = () => {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join hundreds of creators who have boosted their engagement with our clipping services.
           </p>
-          <Button size="lg" className="button-gradient">
+          <Button
+            size="lg"
+            className="button-gradient"
+            onClick={() => navigate('/contact')}
+          >
             Start Your Project
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
