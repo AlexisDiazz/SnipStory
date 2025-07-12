@@ -72,3 +72,32 @@
 .button-gradient {
   @apply bg-gradient-to-r from-primary to-[#22c55e] hover:opacity-90 transition-opacity rounded-full;
 }
+
+@keyframes border-move {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+.border-animated {
+  position: relative;
+}
+
+.border-animated::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #4ade80, #22c55e, #4ade80);
+  background-size: 200% 100%;
+  animation: border-move 5s linear infinite;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
