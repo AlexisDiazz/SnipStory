@@ -1,6 +1,6 @@
 // ✅ FINAL CLEAN VERSION — Navigation.tsx
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Scissors, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
@@ -8,7 +8,6 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,10 +48,17 @@ const Navigation = () => {
     >
       <div className="mx-auto h-full px-6">
         <nav className="flex items-center justify-between h-full">
-          <div className="flex items-center gap-2">
-            <Scissors className="w-5 h-5 text-primary" />
-            <span className="font-bold text-base">SnipStory</span>
-          </div>
+          <Button
+            asChild
+            variant="ghost"
+            size="sm"
+            className="flex items-center gap-2 px-0"
+          >
+            <Link to="/">
+              <Scissors className="w-5 h-5 text-primary" />
+              <span className="font-bold text-base">SnipStory</span>
+            </Link>
+          </Button>
 
           <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) =>
