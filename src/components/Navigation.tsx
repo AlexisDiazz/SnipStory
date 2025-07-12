@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Scissors, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
@@ -6,6 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +42,11 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { name: "Contact Us", href: "#contact", onClick: () => scrollToSection('cta') },
+    {
+      name: "Contact Us",
+      href: "#contact",
+      onClick: () => navigate('/contact'),
+    },
     { name: "View Our Projects", href: "#projects", onClick: () => scrollToSection('testimonials') },
     { name: "Prices", href: "#pricing", onClick: () => scrollToSection('pricing') },
     { name: "Features", href: "#features", onClick: () => scrollToSection('features') },
@@ -78,8 +84,8 @@ const Navigation = () => {
                 {item.name}
               </a>
             ))}
-            <Button 
-              onClick={() => scrollToSection('cta')}
+            <Button
+              onClick={() => navigate('/contact')}
               size="sm"
               className="button-gradient"
             >
@@ -113,10 +119,10 @@ const Navigation = () => {
                       {item.name}
                     </a>
                   ))}
-                  <Button 
+                  <Button
                     onClick={() => {
                       setIsMobileMenuOpen(false);
-                      scrollToSection('cta');
+                      navigate('/contact');
                     }}
                     className="button-gradient mt-4"
                   >
