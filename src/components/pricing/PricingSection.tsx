@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CardSpotlight } from "./CardSpotlight";
+import { Link } from "react-router-dom";
 
 const PricingTier = ({
   name,
@@ -37,8 +38,8 @@ const PricingTier = ({
           </li>
         ))}
       </ul>
-      <Button className="button-gradient w-full">
-        Get Started
+      <Button asChild className="button-gradient w-full">
+        <Link to="/contact">Get Started</Link>
       </Button>
     </div>
   </CardSpotlight>
