@@ -27,7 +27,9 @@ const PricingTier = ({
       <h3 className="text-xl font-medium mb-2">{name}</h3>
       <div className="mb-4">
         <span className="text-4xl font-bold">{price}</span>
-        {price !== "Custom" && <span className="text-gray-400">/month</span>}
+        {!price.startsWith("Custom") && (
+          <span className="text-gray-400">/month</span>
+        )}
       </div>
       <p className="text-gray-400 mb-6">{description}</p>
       <ul className="space-y-3 mb-8 flex-grow">
@@ -70,40 +72,55 @@ export const PricingSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <PricingTier
-          name="Starter Package"
-          price="$99"
-          description="Perfect for content creators starting their journey"
+          name="Initial Boost"
+          price="$399"
+          description="Designed for emerging creators"
           features={[
-            "5 clips per month",
-            "Basic editing & transitions",
-            "Platform optimization",
-            "Email support"
+            "Up to 2 content hours per month",
+            "Up to 15 clips delivered",
+            "Basic platform optimization",
+            "Automatic subtitles",
+            "Basic analytics dashboard (views only)",
+            "API integration not included",
+            "No dedicated account manager",
+            "Email support (48h response time)",
+            "Monthly strategy session not included",
+            "Custom feature development not available"
           ]}
         />
         <PricingTier
-          name="Professional Package"
-          price="$299"
-          description="Advanced features for serious content creators"
+          name="Accelerated Growth"
+          price="$1,349"
+          description="Ideal for established creators"
           features={[
-            "20 clips per month",
-            "Advanced editing & effects",
-            "Custom thumbnails",
-            "Content strategy consultation",
-            "Priority support"
+            "Up to 8 content hours per month",
+            "Up to 40 clips delivered",
+            "Basic optimization with SEO",
+            "Automatic & customizable subtitles",
+            "Full analytics dashboard (advanced metrics, trends)",
+            "API integration not included",
+            "No dedicated account manager",
+            "Email & chat support (12h response time)",
+            "30-minute monthly strategy session",
+            "Custom feature development not available"
           ]}
           isPopular
         />
         <PricingTier
-          name="Enterprise Package"
-          price="Custom"
-          description="Complete social media management for brands"
+          name="Tailored Solution"
+          price="Custom pricing"
+          description="Custom solutions for large creators and companies"
           features={[
-            "Unlimited clips",
-            "Full content strategy",
-            "Multi-platform optimization",
-            "Dedicated account manager",
-            "Analytics & reporting",
-            "24/7 support"
+            "Custom content volume",
+            "Unlimited clips (manual curation)",
+            "Optimization with SEO & SEM",
+            "Advanced multilingual subtitles",
+            "Custom analytics (predictive reporting)",
+            "API integration with CMS, editing & marketing automation",
+            "Dedicated account manager (1-on-1 support)",
+            "24/7 support with SLA",
+            "Fully personalized strategy sessions",
+            "Custom feature development available"
           ]}
         />
       </div>
