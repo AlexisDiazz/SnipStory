@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Scissors, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
@@ -6,6 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +42,10 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { name: "Contact Us", href: "#contact", onClick: () => scrollToSection('cta') },
+    {
+      name: "Contact Us",
+      to: "/contact",
+    },
     { name: "View Our Projects", href: "#projects", onClick: () => scrollToSection('testimonials') },
     { name: "Prices", href: "#pricing", onClick: () => scrollToSection('pricing') },
     { name: "Features", href: "#features", onClick: () => scrollToSection('features') },
@@ -63,27 +68,33 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (item.onClick) {
-                    item.onClick();
-                  }
-                }}
-                className="text-sm text-muted-foreground hover:text-foreground transition-all duration-300"
-              >
-                {item.name}
-              </a>
-            ))}
-            <Button 
-              onClick={() => scrollToSection('cta')}
-              size="sm"
-              className="button-gradient"
-            >
-              Get Started
+            {navItems.map((item) =>
+              item.to ? (
+                <Link
+                  key={item.name}
+                  to={item.to}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-all duration-300"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (item.onClick) {
+                      item.onClick();
+                    }
+                  }}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-all duration-300"
+                >
+                  {item.name}
+                </a>
+              )
+            )}
+            <Button asChild size="sm" className="button-gradient">
+              <Link to="/contact">Get Started</Link>
             </Button>
           </div>
 
@@ -97,30 +108,37 @@ const Navigation = () => {
               </SheetTrigger>
               <SheetContent className="bg-[#1B1B1B]">
                 <div className="flex flex-col gap-4 mt-8">
-                  {navItems.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="text-lg text-muted-foreground hover:text-foreground transition-colors"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setIsMobileMenuOpen(false);
-                        if (item.onClick) {
-                          item.onClick();
-                        }
-                      }}
-                    >
-                      {item.name}
-                    </a>
-                  ))}
-                  <Button 
-                    onClick={() => {
-                      setIsMobileMenuOpen(false);
-                      scrollToSection('cta');
-                    }}
-                    className="button-gradient mt-4"
-                  >
-                    Get Started
+                  {navItems.map((item) =>
+                    item.to ? (
+                      <Link
+                        key={item.name}
+                        to={item.to}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="text-lg text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        {item.name}
+                      </Link>
+                    ) : (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className="text-lg text-muted-foreground hover:text-foreground transition-colors"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setIsMobileMenuOpen(false);
+                          if (item.onClick) {
+                            item.onClick();
+                          }
+                        }}
+                      >
+                        {item.name}
+                      </a>
+                    )
+                  )}
+                  <Button asChild className="button-gradient mt-4">
+                    <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                      Get Started
+                    </Link>
                   </Button>
                 </div>
               </SheetContent>
