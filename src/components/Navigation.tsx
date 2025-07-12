@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Scissors, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
@@ -6,6 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,6 +81,7 @@ const Navigation = () => {
               </a>
             ))}
             <Button
+              onClick={() => navigate('/contact')}
               onClick={() => (window.location.href = '/contact')}
               size="sm"
               className="button-gradient"
@@ -116,7 +119,9 @@ const Navigation = () => {
                   <Button
                     onClick={() => {
                       setIsMobileMenuOpen(false);
+                      navigate('/contact');
                       window.location.href = '/contact';
+
                     }}
                     className="button-gradient mt-4"
                   >
