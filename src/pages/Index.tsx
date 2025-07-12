@@ -18,6 +18,13 @@ const Index = () => {
     <div className="min-h-screen bg-black text-foreground">
       <Navigation />
 
+      {/* Landing Image */}
+      <div className="flex justify-center mt-24 px-4">
+        <div className="border-animated rounded-xl overflow-hidden w-full max-w-4xl">
+          <img src="/lovable-uploads/landing_1.png" alt="Landing" className="w-full h-auto" />
+        </div>
+      </div>
+
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
