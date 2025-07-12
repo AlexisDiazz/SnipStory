@@ -1,3 +1,4 @@
+// ✅ FINAL CLEAN VERSION — Navigation.tsx
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Scissors, Menu } from "lucide-react";
@@ -13,49 +14,36 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    if (sectionId === 'testimonials') {
-      const testimonialSection = document.querySelector('.animate-marquee');
-      if (testimonialSection) {
-        const yOffset = -100; // Offset to account for the fixed header
-        const y = testimonialSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    } else if (sectionId === 'cta') {
-      const ctaSection = document.querySelector('.button-gradient');
-      if (ctaSection) {
-        const yOffset = -100;
-        const y = ctaSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+    const offset = -100;
+    const sectionClass = {
+      testimonials: ".animate-marquee",
+      cta: ".button-gradient",
+    }[sectionId];
+
+    const section = sectionClass ? document.querySelector(sectionClass) : document.getElementById(sectionId);
+    if (section) {
+      const y = section.getBoundingClientRect().top + window.pageYOffset + offset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
   const navItems = [
-    {
-      name: "Contact Us",
-      to: "/contact",
-    },
-    { name: "View Our Projects", href: "#projects", onClick: () => scrollToSection('testimonials') },
-    { name: "Prices", href: "#pricing", onClick: () => scrollToSection('pricing') },
-    { name: "Features", href: "#features", onClick: () => scrollToSection('features') },
+    { name: "Contact Us", to: "/contact" },
+    { name: "View Our Projects", href: "#projects", onClick: () => scrollToSection("testimonials") },
+    { name: "Prices", href: "#pricing", onClick: () => scrollToSection("pricing") },
+    { name: "Features", href: "#features", onClick: () => scrollToSection("features") },
   ];
 
   return (
     <header
       className={`fixed top-3.5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 rounded-full ${
-        isScrolled 
-          ? "h-14 bg-[#1B1B1B]/40 backdrop-blur-xl border border-white/10 scale-95 w-[90%] max-w-2xl" 
+        isScrolled
+          ? "h-14 bg-[#1B1B1B]/40 backdrop-blur-xl border border-white/10 scale-95 w-[90%] max-w-2xl"
           : "h-14 bg-[#1B1B1B] w-[95%] max-w-3xl"
       }`}
     >
@@ -66,7 +54,6 @@ const Navigation = () => {
             <span className="font-bold text-base">SnipStory</span>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) =>
               item.to ? (
@@ -83,9 +70,7 @@ const Navigation = () => {
                   href={item.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    if (item.onClick) {
-                      item.onClick();
-                    }
+                    item.onClick?.();
                   }}
                   className="text-sm text-muted-foreground hover:text-foreground transition-all duration-300"
                 >
@@ -98,7 +83,6 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile Navigation */}
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
@@ -122,14 +106,12 @@ const Navigation = () => {
                       <a
                         key={item.name}
                         href={item.href}
-                        className="text-lg text-muted-foreground hover:text-foreground transition-colors"
                         onClick={(e) => {
                           e.preventDefault();
                           setIsMobileMenuOpen(false);
-                          if (item.onClick) {
-                            item.onClick();
-                          }
+                          item.onClick?.();
                         }}
+                        className="text-lg text-muted-foreground hover:text-foreground transition-colors"
                       >
                         {item.name}
                       </a>

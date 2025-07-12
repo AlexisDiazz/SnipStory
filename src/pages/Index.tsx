@@ -1,8 +1,9 @@
+// ✅ FINAL CLEAN VERSION — Index.tsx
 import { motion } from "framer-motion";
 import { ArrowRight, Scissors } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FeaturesSection } from "@/components/features/FeaturesSection";
 import { PricingSection } from "@/components/pricing/PricingSection";
 import LogoCarousel from "@/components/LogoCarousel";
@@ -11,6 +12,8 @@ import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-black text-foreground">
       <Navigation />
@@ -51,8 +54,7 @@ const Index = () => {
             transition={{ delay: 0.4 }}
             className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl text-left"
           >
-            Transform your content into viral clips with our professional editing services, growth strategies, and social media optimization.{" "}
-            <span className="text-white">Boost your engagement today.</span>
+            Transform your content into viral clips with our professional editing services, growth strategies, and social media optimization. <span className="text-white">Boost your engagement today.</span>
           </motion.p>
 
           <motion.div
@@ -61,9 +63,9 @@ const Index = () => {
             transition={{ delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 items-start"
           >
-          <Button asChild size="lg" className="button-gradient">
-            <Link to="/contact">Get Started</Link>
-          </Button>
+            <Button asChild size="lg" className="button-gradient">
+              <Link to="/contact">Get Started</Link>
+            </Button>
             <Button size="lg" variant="link" className="text-white">
               View Our Work <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
