@@ -116,6 +116,8 @@ const Index = () => {
             size="lg"
             className="button-gradient"
             onClick={() => navigate('/contact')}
+
+            onClick={() => (window.location.href = '/contact')}
           >
             Start Your Project
             <ArrowRight className="ml-2 w-4 h-4" />

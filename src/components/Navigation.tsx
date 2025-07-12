@@ -82,6 +82,7 @@ const Navigation = () => {
             ))}
             <Button
               onClick={() => navigate('/contact')}
+              onClick={() => (window.location.href = '/contact')}
               size="sm"
               className="button-gradient"
             >
@@ -119,6 +120,8 @@ const Navigation = () => {
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       navigate('/contact');
+                      window.location.href = '/contact';
+
                     }}
                     className="button-gradient mt-4"
                   >
