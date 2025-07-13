@@ -10,13 +10,13 @@ import Footer from '@/components/Footer';
 import { toast } from '@/components/ui/use-toast';
 
 const formSchema = z.object({
-  fullName: z.string().min(1, 'Full Name is required'),
+  name: z.string().min(1, 'Full Name is required'),
   email: z.string().email('Invalid email'),
   message: z.string().min(1, 'Message is required'),
-  phone: z.string().optional(),
-  company: z.string().optional(),
-  inquiryType: z.string().optional(),
-  referral: z.string().optional(),
+  'phone number': z.string().optional(),
+  'company name': z.string().optional(),
+  'type of inquiry': z.string().optional(),
+  'how did you hear': z.string().optional(),
   botField: z.string().optional(),
 });
 
@@ -26,13 +26,13 @@ const Contact = () => {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      fullName: '',
+      name: '',
       email: '',
       message: '',
-      phone: '',
-      company: '',
-      inquiryType: '',
-      referral: '',
+      'phone number': '',
+      'company name': '',
+      'type of inquiry': '',
+      'how did you hear': '',
       botField: '',
     },
   });
@@ -40,14 +40,11 @@ const Contact = () => {
   async function onSubmit(values: FormValues) {
     if (values.botField) return; // honeypot
     try {
-      const res = await fetch(
-        'https://script.google.com/macros/s/AKfycby5zKHbPimSXw9DxJ2WkSLUA-C0Oe_w1nF2DipuVWZ1Nr03ROqyP8EcZ6lzf2MM7kYqeQ/exec',
-        {
-          method: 'POST',
-          body: JSON.stringify(values),
-          headers: { 'Content-Type': 'application/json' },
-        }
-      );
+      const res = await fetch('https://sheetdb.io/api/v1/r4af3gpdaf2ue', {
+        method: 'POST',
+        body: JSON.stringify({ data: values }),
+        headers: { 'Content-Type': 'application/json' },
+      });
       if (!res.ok) throw new Error('Failed to submit');
       toast({ title: 'Thank you! We\'ll get back to you within 24 hours.' });
       form.reset();
@@ -68,7 +65,7 @@ const Contact = () => {
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormField
               control={form.control}
-              name="fullName"
+              name="name"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Full Name</FormLabel>
@@ -94,7 +91,7 @@ const Contact = () => {
             />
             <FormField
               control={form.control}
-              name="phone"
+              name="phone number"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Phone Number</FormLabel>
@@ -106,7 +103,7 @@ const Contact = () => {
             />
             <FormField
               control={form.control}
-              name="company"
+              name="company name"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Company Name</FormLabel>
@@ -118,7 +115,7 @@ const Contact = () => {
             />
             <FormField
               control={form.control}
-              name="inquiryType"
+              name="type of inquiry"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Type of Inquiry</FormLabel>
@@ -137,7 +134,7 @@ const Contact = () => {
             />
             <FormField
               control={form.control}
-              name="referral"
+              name="how did you hear"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>How did you hear about us?</FormLabel>
