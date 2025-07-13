@@ -27,14 +27,11 @@ function saveSubmission(data: any) {
 app.post('/api/contact', async (req, res) => {
   try {
     saveSubmission(req.body);
-    await fetch(
-      'https://script.google.com/macros/s/AKfycby5zKHbPimSXw9DxJ2WkSLUA-C0Oe_w1nF2DipuVWZ1Nr03ROqyP8EcZ6lzf2MM7kYqeQ/exec',
-      {
-        method: 'POST',
-        body: JSON.stringify(req.body),
-        headers: { 'Content-Type': 'application/json' },
-      },
-    );
+    await fetch('https://sheetdb.io/api/v1/r4af3gpdaf2ue', {
+      method: 'POST',
+      body: JSON.stringify(req.body),
+      headers: { 'Content-Type': 'application/json' },
+    });
     res.status(200).json({ success: true });
   } catch (error) {
     console.error('Error saving submission', error);
