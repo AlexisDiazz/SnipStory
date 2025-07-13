@@ -46,7 +46,7 @@ const Contact = () => {
         headers: { 'Content-Type': 'application/json' },
       });
       if (!res.ok) throw new Error('Failed to submit');
-      toast({ title: 'Thank you! We\'ll get back to you within 24 hours.' });
+      toast({ title: "Thank you! We'll get back to you within 24 hours." });
       form.reset();
     } catch (err) {
       toast({ title: 'Submission failed', description: 'Please try again later.' });
@@ -59,7 +59,7 @@ const Contact = () => {
       <main className="flex-1 container mx-auto px-4 pt-32 pb-20 max-w-2xl">
         <h1 className="text-4xl font-bold mb-4 text-center">Start Your Project</h1>
         <p className="text-muted-foreground mb-8 text-center">
-          Tell us about your project and we\'ll reach out within 24 hours.
+          Tell us about your project and we'll reach out within 24 hours.
         </p>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
