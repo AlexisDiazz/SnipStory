@@ -29,8 +29,8 @@ app.post('/api/contact', async (req, res) => {
     saveSubmission(req.body);
     await fetch('https://sheetdb.io/api/v1/r4af3gpdaf2ue', {
       method: 'POST',
-      body: JSON.stringify(req.body),
       headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data: req.body }),
     });
     res.status(200).json({ success: true });
   } catch (error) {
